@@ -1,7 +1,13 @@
 # Vocabulary
 
-Wrapper for unofficial Google Disctionary API. *Fetch meanings and part of speech of `any` word of any language.*
+Wrapper for unofficial Google Dictionary API. *Fetch meanings and part of speech of `any` word of any language.*
 You can find the list of supported languages (over 90) in [separated file](https://github.com/kirs/vocabulary/blob/master/languages.md)
+
+##Setup
+
+Just add to your Gemfile:
+
+    gem "vocabularry", :git => "git://github.com/kirs/vocabulary.git"
 
 ##Usage
 
