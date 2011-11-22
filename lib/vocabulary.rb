@@ -18,7 +18,7 @@ module Vocabulary
   end
   # TODO return meanings
   
-  class Disctionary
+  class Dictionary
     include HTTParty
     format :plain
     base_uri 'http://www.google.com/'
@@ -47,7 +47,7 @@ module Vocabulary
   
   def self.lookup(word, source_lang, target_lang = nil)
     target_lang ||= :en
-    data = Disctionary.new.get(word, source_lang.to_s, target_lang.to_s)
+    data = Dictionary.new.get(word, source_lang.to_s, target_lang.to_s)
     word = Word.new(data)
     word
   end
