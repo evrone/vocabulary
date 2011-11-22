@@ -48,7 +48,6 @@ module Vocabulary
   def self.lookup(word, source_lang, target_lang = nil)
     target_lang ||= :en
     data = Disctionary.new.get(word, source_lang.to_s, target_lang.to_s)
-    word = Word.new(data)
-    word
+    Word.new(data)
   end
 end
