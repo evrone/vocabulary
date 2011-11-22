@@ -39,8 +39,6 @@ module Vocabulary
         info = response.parsed_response
         json = info.gsub("substr(", "").gsub!(",200,null)", "")
         JSON.parse(json)
-      else
-        nil
       end
     end
   end
