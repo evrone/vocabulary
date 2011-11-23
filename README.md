@@ -5,11 +5,11 @@ You can find the list of supported languages (over 90) in [separated file](https
 
 ##Setup
 
-Run `gem install vocabularry` or
+Run `gem install vocabulary` or
 
 Just add to your Gemfile:
 
-    gem "vocabularry"
+    gem "vocabulary"
 
 ##Usage
 
