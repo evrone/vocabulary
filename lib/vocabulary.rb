@@ -1,6 +1,5 @@
-require "vocabulary/version"
-
 require 'httparty'
+require "vocabulary/version"
 
 module Vocabulary
   class Word
@@ -16,7 +15,6 @@ module Vocabulary
       end
     end
   end
-  # TODO return meanings
   
   class Dictionary
     include HTTParty
@@ -30,7 +28,7 @@ module Vocabulary
       options[:query] = {
         :callback => "substr",
         :q => word,
-        :sl => target_lang,#"en",
+        :sl => target_lang,
         :tl => source_lang
       }
       
