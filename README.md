@@ -5,9 +5,11 @@ You can find the list of supported languages (over 90) in [separated file](https
 
 ##Setup
 
+Run `gem install vocabularry` or
+
 Just add to your Gemfile:
 
-    gem "vocabularry", :git => "git://github.com/kirs/vocabulary.git"
+    gem "vocabularry"
 
 ##Usage
 
