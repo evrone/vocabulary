@@ -43,7 +43,7 @@ module Vocabulary
   
   def self.lookup(word, source_lang, target_lang = nil)
     target_lang ||= :en
-    data = Dictionary.new.get(word, source_lang.to_s, target_lang.to_s)
-    Word.new(data)
+    data = Vocabulary::Dictionary.new.get(word, source_lang.to_s, target_lang.to_s)
+    Vocabulary::Word.new(data)
   end
 end
