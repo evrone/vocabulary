@@ -13,12 +13,19 @@ module Vocabulary
   class Word
     attr_accessor :part_of_speech, :meanings
     
-    def initialize summary
+    def initialize summary, source_lang
       begin
-        @part_of_speech = summary["primaries"][0]["entries"][0]["labels"][0]["text"]
-      
         @meanings = []
-        summary["primaries"][0]["entries"][0]["entries"].each do |meaning|
+      
+        if source_lang == :en
+          @part_of_speech = summary["primaries"][0]["terms"][0]["labels"][0]["text"]
+          collection = summary["primaries"][0]["entries"]
+        else
+          @part_of_speech = summary["primaries"][0]["entries"][0]["labels"][0]["text"]
+          collection = summary["primaries"][0]["entries"][0]["entries"]
+        end
+      
+        collection.each do |meaning|
           @meanings << meaning["terms"][0]["text"]
         end
       rescue
@@ -56,6 +63,7 @@ module Vocabulary
     target_lang ||= :en
     raise ArgumentError, "Word can't be blank" unless word.present?
     data = Vocabulary::Dictionary.new.get(word, source_lang.to_s, target_lang.to_s)
-    Vocabulary::Word.new(data)
+    # return data
+    Vocabulary::Word.new(data, source_lang)
   end
 end
